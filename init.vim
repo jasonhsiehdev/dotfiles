@@ -42,6 +42,7 @@ Plug 'Valloric/YouCompleteMe'               " For code complete
 Plug 'chazy/cscope_maps'                    " For code navigation
 Plug 'lyuts/vim-rtags'                      " For code navigation 
 Plug 'tpope/vim-fugitive'                   " For git 
+Plug 'plasticboy/vim-markdown'              " For markdown syntax
 call plug#end()                             " For plugin end
 
 colorscheme gruvbox                         " For vim theme         

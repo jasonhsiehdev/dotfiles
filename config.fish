@@ -177,7 +177,7 @@ function show_cpu_info -d "Prints iformation about cpu"
         # set --local procs_n (system_profiler SPHardwareDataType | grep "Total Number of Cores" | cut -d ":" -f2 | tr -d " ")
         set --local cores_n (system_profiler SPHardwareDataType | grep "Total Number of Cores" | cut -f2 -d ':' | cut -c 2)
         set --local cpu_type (system_profiler SPHardwareDataType | grep "Chip" | cut -d ":" -f2 | tr -d " ")
-        set cpu_info "$cpu_type, $cores_n cores"
+        set cpu_info "Macbook $cpu_type, $cores_n cores"
     end
 
     printf '%*s' $COLUMNS $cpu_info

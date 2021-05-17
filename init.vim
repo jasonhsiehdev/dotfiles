@@ -43,6 +43,7 @@ Plug 'chazy/cscope_maps'                    " For code navigation
 Plug 'lyuts/vim-rtags'                      " For code navigation 
 Plug 'tpope/vim-fugitive'                   " For git 
 Plug 'plasticboy/vim-markdown'              " For markdown syntax
+
 call plug#end()                             " For plugin end
 
 colorscheme gruvbox                         " For vim theme         
@@ -107,3 +108,29 @@ nnoremap <leader>ft :TagbarToggle<cr>
 	" brew install --HEAD neovim
 " .gitignore locally 
     " git update-index --assume-unchanged .gitignore
+
+" Vim keyboard shortcut
+" 'tx' is before 'x' character
+" 'fx' is at 'x' character
+" 'tx' or 'fx' then press ';' is repeat lastest 'fx' or 'tx' , and then, 
+" ',' is repeat lastest 'fx' or 'tx' in other direction.
+
+" 'Shift V' is virtual and yank the line. 
+" 'v' is virtual mode.
+" 'Shift O' is insert a line above.
+" 'o' is insert a line below.
+" 'Shift A' is insert a character at the end of line.
+" 'a' is insert a character at the cursor.
+" 'Shift I' is insert a character at the head of line.
+" 'i' is insert a character before the cursor .
+" '10j' or '6b' or '4w' means jump to {counts}j or b or w. 
+" '%' can jump between parentheses and braces
+" '{}' or '()' can jump to another braces or parentheses, then '}' to your
+" want to and '%' to the open braces.
+" 'Shift v' + '3jd' means yank 3 lines below and delete
+" 'ci(' means cut inside ( parentheses or 'ci{' means cut inside { braces
+" 'vi[' means yank inside [ breaksness
+" 'diw' means delete inside word
+        
+
+     

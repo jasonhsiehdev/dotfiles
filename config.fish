@@ -6,6 +6,8 @@
 set fish_greeting           # Turns off the intro message when pulling up fish shell
 set EDITOR "nvim"           # Sets $EDITOR to vim
 
+test $TERM != "screen"; and exec tmux
+
 set -g theme_date_format "+%a %Y/%m/%d %H.%M"
 
 ### Abbreviations  ###
@@ -75,7 +77,16 @@ function avail
     df -h /home | grep /dev/ | awk '{print $4}'
 end
 
+end
+# end if for Linux
+
+function codebase 
+    find ./ -name "*.c" -o -name "*.h" -o -name "*.cpp" > cscope.files
+    cscope -Rbq -i cscope.files
 end 
+
+
+
 # Modify from fishbone greeting
 
 function fish_greeting -d "Greeting message on shell session start up"

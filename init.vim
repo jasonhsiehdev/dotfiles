@@ -43,6 +43,7 @@ Plug 'chazy/cscope_maps'                    " For code navigation
 Plug 'lyuts/vim-rtags'                      " For code navigation 
 Plug 'tpope/vim-fugitive'                   " For git 
 Plug 'plasticboy/vim-markdown'              " For markdown syntax
+Plug 'ThePrimeagen/vim-be-good'             " For practice vim 
 
 call plug#end()                             " For plugin end
 
@@ -62,14 +63,10 @@ map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set sc
 map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR> 
 
 " For user shortcut by chenghung
-nnoremap <leader>w :w<cr>
-nnoremap <leader>x :x<cr>
-nnoremap <leader>q :q!<cr>
 nnoremap <leader>u :UndotreeShow<cr>
 nnoremap <leader>tt : 5sp term://fish<cr>
 nnoremap <leader>a ^
 nnoremap <leader>e <END>
-nnoremap <leader>dw db
 vnoremap <leader>a ^
 vnoremap <leader>e <END>
 
@@ -131,6 +128,9 @@ nnoremap <leader>ft :TagbarToggle<cr>
 " 'ci(' means cut inside ( parentheses or 'ci{' means cut inside { braces
 " 'vi[' means yank inside [ breaksness
 " 'diw' means delete inside word
-        
 
-     
+" Tmux 
+" 'C-b' is command leader
+" 'C-b' + '%' create new vertical term
+" 'C-b' + '"' create new horizontal term
+" 'C-b ' + 'x' quit current term

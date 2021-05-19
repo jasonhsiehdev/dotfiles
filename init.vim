@@ -128,6 +128,15 @@ nnoremap <leader>ft :TagbarToggle<cr>
 " 'ci(' means cut inside ( parentheses or 'ci{' means cut inside { braces
 " 'vi[' means yank inside [ breaksness
 " 'diw' means delete inside word
+" 'C-z' send vim to background (fg brings it to front again)
+" 's'   Erase the current letter under the cursor, set insert-mode
+" 'S'   Erase the whole line, set insert-mode
+" 'cc'  Delete the current line, set insert-mode
+" 'cw'  Delete word, set insert-mode
+" 'E'   jump to end of words (no punctuation)
+" 'W'   jump by words (spaces separate words)
+" 'B'   jump backward by words (no punctuation)
+
 
 " Tmux 
 " 'C-b' is command leader

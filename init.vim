@@ -143,3 +143,5 @@ nnoremap <leader>ft :TagbarToggle<cr>
 " 'C-b' + '%' create new vertical term
 " 'C-b' + '"' create new horizontal term
 " 'C-b ' + 'x' quit current term
+"
+" abcfdsafdsa

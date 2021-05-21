@@ -24,7 +24,6 @@ set clipboard+=unnamedplus      " sets the clipboard so you can paste stuff from
 set complete+=kspell            " auto complete with spellcheck
 set completeopt=menuone,longest " auto complete menu (It's pretty great)
 set splitbelow                  " set split terminal at the bottom
-
 call plug#begin('~/.config/nvim/plugged')   " For plugin start
         
 Plug 'vim-airline/vim-airline'              " For vim airline 
@@ -39,7 +38,7 @@ Plug 'mbbill/undotree'                      " For undotree, <leader>u for show u
 Plug 'preservim/nerdcommenter'              " For multiple comment, use <leader>cc for comment, <leader>ci for uncomment
 Plug 'preservim/tagbar'                     " For code tag 
 Plug 'Valloric/YouCompleteMe'               " For code complete 
-"Plug 'chazy/cscope_maps'                    " For code navigation
+Plug 'chazy/cscope_maps'                    " For code navigation
 Plug 'lyuts/vim-rtags'                      " For code navigation 
 Plug 'tpope/vim-fugitive'                   " For git 
 Plug 'plasticboy/vim-markdown'              " For markdown syntax

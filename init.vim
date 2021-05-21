@@ -39,20 +39,47 @@ Plug 'mbbill/undotree'                      " For undotree, <leader>u for show u
 Plug 'preservim/nerdcommenter'              " For multiple comment, use <leader>cc for comment, <leader>ci for uncomment
 Plug 'preservim/tagbar'                     " For code tag 
 Plug 'Valloric/YouCompleteMe'               " For code complete 
-Plug 'chazy/cscope_maps'                    " For code navigation
+"Plug 'chazy/cscope_maps'                    " For code navigation
 Plug 'lyuts/vim-rtags'                      " For code navigation 
 Plug 'tpope/vim-fugitive'                   " For git 
 Plug 'plasticboy/vim-markdown'              " For markdown syntax
 Plug 'ThePrimeagen/vim-be-good'             " For practice vim 
+Plug 'BurntSushi/ripgrep'                   " sudo add-apt-repository ppa:x4121/ripgrep
+Plug 'jremmen/vim-ripgrep'                  " For vim ripgrep
+Plug 'mhinz/vim-grepper'                    " For grep 
+Plug 'lambdalisue/fern.vim'                 " For vim split pretty
 
 call plug#end()                             " For plugin end
 
+if !exists('g:gruvbox_contrast_light')
+  let g:gruvbox_contrast_light='hard'
+endif
+
 colorscheme gruvbox                         " For vim theme         
+set background=dark
+
+" Specific colorscheme settings (must come after setting your colorscheme).
+if (g:colors_name == 'gruvbox')
+  if (&background == 'dark')
+    hi Visual cterm=NONE ctermfg=NONE ctermbg=237 guibg=#3a3a3a
+  else
+    hi Visual cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
+    hi CursorLine cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
+    hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=228 guibg=#f2e5bc
+  endif
+endif
+
+" Spelling mistakes will be colored up red.
+hi SpellBad cterm=underline ctermfg=203 guifg=#ff5f5f
+hi SpellLocal cterm=underline ctermfg=203 guifg=#ff5f5f
+hi SpellRare cterm=underline ctermfg=203 guifg=#ff5f5f
+hi SpellCap cterm=underline ctermfg=203 guifg=#ff5f5f
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
- 
+
+let g:airline#extensions#whitespace#enabled = 0
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'  " For YCM configuration
 let g:ycm_confirm_extra_conf = 0                        " For YCM configuration
 let g:NERDSpaceDelims = 1                               " For comment space dilims
@@ -63,30 +90,37 @@ map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set sc
 map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR> 
 
 " For user shortcut by chenghung
-nnoremap <leader>u :UndotreeShow<cr>
-nnoremap <leader>tt : 5sp term://fish<cr>
-nnoremap <leader>a ^
-nnoremap <leader>e <END>
-vnoremap <leader>a ^
-vnoremap <leader>e <END>
+nnoremap <silent> <leader>u :UndotreeShow<cr>
+nnoremap <silent> <leader>tt : 5sp term://fish<cr>
+nnoremap <silent> <leader>a ^
+nnoremap <silent> <leader>e <end>
+vnoremap <silent> <leader>a ^
+vnoremap <silent> <leader>e <end>
 
 " For telescope files finder shortcut
-nnoremap <leader>ff <cmd>Telescope find_files<cr> 
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr> 
+nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <silent> <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent> <leader>fh <cmd>Telescope help_tags<cr>
 
 " For code navigation shortcut 
-nnoremap <silent> <leader>gd :cs find g <C-R>=expand("<cword>")<CR><CR> 
-nnoremap <silent> <leader>gi :cs find i <C-R>=expand("<cword>")<CR><CR>
-nnoremap <silent> <leader>gu :cs find c <C-R>=expand("<cword>")<CR><CR> 
-nnoremap <silent> <leader>gf :cs find f <C-R>=expand("<cword>")<CR><CR>
+nnoremap <silent> <leader>gd :cs find g <C-r>=expand("<cword>")<cr><cr> 
+nnoremap <silent> <leader>gi :cs find i <C-r>=expand("<cword>")<cr><cr>
+nnoremap <silent> <leader>gu :cs find c <C-r>=expand("<cword>")<cr><cr> 
+nnoremap <silent> <leader>gf :cs find f <C-r>=expand("<cword>")<cr><cr>
 
 " For code navigation back shortcut
-nnoremap <C-C> <C-T>               
+nnoremap <silent> <C-c> <C-t>               
 
 " For tarbar shortcut
-nnoremap <leader>ft :TagbarToggle<cr>  
+nnoremap <silent> <leader>ft :TagbarToggle<cr>  
+
+" For grepper, find and replace
+nnoremap <leader>R
+    \ :let @s=''.expand('<cword>').''<Cr>
+    \ :Rg <C-r>s<cr><cr>
+    \ :cfdo %s/<C-r>s/<>/gc \| update 
+
 
 
 " Install neovim dependency library 
@@ -136,7 +170,8 @@ nnoremap <leader>ft :TagbarToggle<cr>
 " 'E'   jump to end of words (no punctuation)
 " 'W'   jump by words (spaces separate words)
 " 'B'   jump backward by words (no punctuation)
-
+" '%s/ori_string/replace_string/g' for replacing one file
+" ':Rg string -g '*.html'
 
 " Tmux 
 " 'C-b' is command leader

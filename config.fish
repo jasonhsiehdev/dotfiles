@@ -2,6 +2,7 @@
 # set -U fish_user_paths $fish_user_paths /usr/local/bin
 # set -U fish_user_paths $fish_user_paths /usr/bin
 # set -U fish_user_paths $fish_user_paths /opt/homebrew/bin/ 
+# set -gx FZF_DEFAULT_COMMAND  'rg --files --no-ignore-vcs --hidden'
 
 set fish_greeting           # Turns off the intro message when pulling up fish shell
 set EDITOR "nvim"           # Sets $EDITOR to vim
@@ -32,7 +33,9 @@ abbr fgrep 'fgrep --color=auto'
 abbr cp 'cp -i'
 abbr mv 'mv -i'
 abbr rm 'rm -i'
-
+abbr --add set_fish 'set -U fish_user_paths $fish_user_paths <path>'
+abbr --add unset_fish 'set --erase <variable>'
+abbr --add swap 'rm ~/.local/share/nvim/swap/*.swp'
 set os_type (uname -s)
 
 if [ "$os_type" = "Linux" ]
@@ -84,7 +87,6 @@ function codebase
     find ./ -name "*.c" -o -name "*.h" -o -name "*.cpp" > cscope.files
     cscope -Rbq -i cscope.files
 end 
-
 
 
 # Modify from fishbone greeting

@@ -68,12 +68,6 @@ if (g:colors_name == 'gruvbox')
   endif
 endif
 
-" Spelling mistakes will be colored up red.
-hi SpellBad cterm=underline ctermfg=203 guifg=#ff5f5f
-hi SpellLocal cterm=underline ctermfg=203 guifg=#ff5f5f
-hi SpellRare cterm=underline ctermfg=203 guifg=#ff5f5f
-hi SpellCap cterm=underline ctermfg=203 guifg=#ff5f5f
-
 if executable('rg')
     let g:rg_derive_root='true'
 endif
@@ -83,10 +77,6 @@ let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'  " For YCM configuration
 let g:ycm_confirm_extra_conf = 0                        " For YCM configuration
 let g:NERDSpaceDelims = 1                               " For comment space dilims
 let mapleader = " "                                     " My leader character
-
-" For page up/down scroll speed
-map <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR> 
-map <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR> 
 
 " For user shortcut by chenghung
 nnoremap <silent> <leader>u :UndotreeShow<cr>
@@ -116,10 +106,18 @@ nnoremap <silent> <leader>ft :TagbarToggle<cr>
 
 " For grepper, find and replace
 nnoremap <leader>R
-    \ :let @s=''.expand('<cword>').''<Cr>
+    \ :let @s=''.expand('<cword>').''<cr>
     \ :Rg <C-r>s<cr><cr>
     \ :cfdo %s/<C-r>s/<>/gc \| update 
 
+nnoremap <Leader>r
+    \ :let @s=''.expand('<cword>').''<cr>
+    \ :%s/<C-r>s/<>/gc
+
+
+" For multi-line tab
+vmap <Tab> >
+vmap <S-Tab> <
 
 
 " Install neovim dependency library 

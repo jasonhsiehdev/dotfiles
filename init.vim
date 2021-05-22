@@ -114,11 +114,9 @@ nnoremap <Leader>r
     \ :let @s=''.expand('<cword>').''<cr>
     \ :%s/<C-r>s/<>/gc
 
-
 " For multi-line tab
 vmap <Tab> >
 vmap <S-Tab> <
-
 
 " Install neovim dependency library 
 	" brew install pkg-config starship cmake luarocks ctags
@@ -175,5 +173,3 @@ vmap <S-Tab> <
 " 'C-b' + '%' create new vertical term
 " 'C-b' + '"' create new horizontal term
 " 'C-b ' + 'x' quit current term
-"
-" abcfdsafdsa

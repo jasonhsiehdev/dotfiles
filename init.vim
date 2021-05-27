@@ -24,29 +24,31 @@ set clipboard+=unnamedplus      " sets the clipboard so you can paste stuff from
 set complete+=kspell            " auto complete with spellcheck
 set completeopt=menuone,longest " auto complete menu (It's pretty great)
 set splitbelow                  " set split terminal at the bottom
+set nohlsearch                    " set highlight search
+
 call plug#begin('~/.config/nvim/plugged')   " For plugin start
-        
-Plug 'vim-airline/vim-airline'              " For vim airline 
-Plug 'vim-airline/vim-airline-themes'       " For vim airline theme 
-Plug 'nvim-lua/popup.nvim'                  " For files finder 
-Plug 'nvim-lua/plenary.nvim'                " For files finder  
-Plug 'nvim-telescope/telescope.nvim'        " For files finder
-Plug 'vim-utils/vim-man'                    " For vim man help 
-Plug 'gruvbox-community/gruvbox'            " For vim theme
-Plug 'flazz/vim-colorschemes'               " For vim color  
-Plug 'mbbill/undotree'                      " For undotree, <leader>u for show undotree 
-Plug 'preservim/nerdcommenter'              " For multiple comment, use <leader>cc for comment, <leader>ci for uncomment
-Plug 'preservim/tagbar'                     " For code tag 
-Plug 'Valloric/YouCompleteMe'               " For code complete 
-Plug 'chazy/cscope_maps'                    " For code navigation
-Plug 'lyuts/vim-rtags'                      " For code navigation 
-Plug 'tpope/vim-fugitive'                   " For git 
-Plug 'plasticboy/vim-markdown'              " For markdown syntax
-Plug 'ThePrimeagen/vim-be-good'             " For practice vim 
-Plug 'BurntSushi/ripgrep'                   " sudo add-apt-repository ppa:x4121/ripgrep
-Plug 'jremmen/vim-ripgrep'                  " For vim ripgrep
-Plug 'mhinz/vim-grepper'                    " For grep 
-Plug 'lambdalisue/fern.vim'                 " For vim split pretty
+
+Plug 'vim-airline/vim-airline'                  " For vim airline 
+Plug 'vim-airline/vim-airline-themes'           " For vim airline theme 
+Plug 'nvim-lua/popup.nvim'                      " For files finder 
+Plug 'nvim-lua/plenary.nvim'                    " For files finder  
+Plug 'nvim-telescope/telescope.nvim'            " For files finder
+Plug 'vim-utils/vim-man'                        " For vim man help 
+Plug 'gruvbox-community/gruvbox'                " For vim theme
+Plug 'flazz/vim-colorschemes'                   " For vim color  
+Plug 'mbbill/undotree'                          " For undotree, <leader>u for show undotree 
+Plug 'preservim/nerdcommenter'                  " For multiple comment, use <leader>cc for comment, <leader>ci for uncomment
+Plug 'preservim/tagbar'                         " For code tag 
+Plug 'Valloric/YouCompleteMe'                   " For code complete 
+Plug 'chazy/cscope_maps'                        " For code navigation
+Plug 'lyuts/vim-rtags'                          " For code navigation 
+Plug 'tpope/vim-fugitive'                       " For git 
+Plug 'plasticboy/vim-markdown'                  " For markdown syntax
+Plug 'ThePrimeagen/vim-be-good'                 " For practice vim 
+Plug 'BurntSushi/ripgrep'                       " sudo add-apt-repository ppa:x4121/ripgrep
+Plug 'jremmen/vim-ripgrep'                      " For vim ripgrep
+Plug 'mhinz/vim-grepper'                        " For grep 
+Plug 'lambdalisue/fern.vim'                     " For vim split pretty
 
 call plug#end()                             " For plugin end
 
@@ -118,6 +120,10 @@ nnoremap <Leader>r
 vmap <Tab> >
 vmap <S-Tab> <
 
+" For shift j or shift k to yank something j or k
+vnoremap J :m '>+1<CR>gv=gv 
+vnoremap K :m '<-2<CR>gv=gv 
+
 " Install neovim dependency library 
 	" brew install pkg-config starship cmake luarocks ctags
 " vim ~/.config/fish/config.fish at the end of file 
@@ -167,7 +173,14 @@ vmap <S-Tab> <
 " 'B'   jump backward by words (no punctuation)
 " '%s/ori_string/replace_string/g' for replacing one file
 " ':Rg string -g '*.html'
-
+" vi'   yank between '
+" vi (  yank between (
+" 'm + shift k' mark
+" 'm + shift j' mark
+" ' ' + shift j ' jump to mark j
+" ' ' + shift k ' jump to mark k
+"
+"
 " Tmux 
 " 'C-b' is command leader
 " 'C-b' + '%' create new vertical term

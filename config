@@ -13,15 +13,15 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Default key binding -------------------------------------------------------------------------------------------000000
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -83,7 +83,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9 Spotify  "
 set $ws10 "10 Desktop   "
 
 # switch to workspace
@@ -142,9 +142,9 @@ bindsym $mod+r mode "resize"
 
 
 # User setting -------------------------------------------------------------------------------------------------------- 
-for_window [class="Thunar"] move to workspace $ws10
-for_window [class="Firefox"] move to workspace $ws1
-
+for_window [class="Thunar"] move to workspace $ws10  
+for_window [class="Firefox"] move to workspace $ws1  
+for_window [class="Spotify"] move to workspace $ws9 
 
 # window colors variables
 set $bg-color 	         #2f343f
@@ -178,10 +178,19 @@ bar {
 hide_edge_borders both
 
 # User key binding ----------------------------------------------------------------------------------------------------
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
-bindsym $mod+Shift+f exec thunar
-
+bindsym $mod+Shift+t exec thunar
+bindsym $mod+Shift+p exec shutter
+bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym XF86MonBrightnessUp exec light -A 5     # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5   # decrease screen brightness
+#
+# Start up setting 
+exec --no-startup-id fcitx
+exec --no-startup-id compton
+exec --no-startup-id spotify
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
 # Installation
 # sudo apt-get install i3 thunar font-awesome 
 # sudo apt-get install gnome-icon-theme-full
@@ -193,3 +202,10 @@ bindsym $mod+Shift+f exec thunar
 # cargo install --path .
 # ./install.sh
 # cp dotfiles/config.toml to i3status-rust/
+# git clone https://github.com/haikarainen/light.git
+# ./autogen.sh && ./configure.sh && make && sudo make install
+#
+# sudo apt-get install rofi
+# git clone --depth=1 https://github.com/adi1090x/rofi.git
+# ./setup.sh
+# 

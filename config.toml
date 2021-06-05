@@ -1,6 +1,6 @@
 
 theme = "nord-dark"
-icons = "none"
+icons = "awesome"
 
 [[block]]
 block = "custom"
@@ -16,21 +16,31 @@ unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
+format = "{icon} {available}"
+
+[[block]]
+block = "custom"
+on_click = '''thunar /media/$USER/(ls /media/$USER)''' 
+command = '''ls /media/$USER | awk '{printf "  "$0}''''
+interval = 2
+
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_total_used_percents}"
-format_swap = "{swap_used_percents}"
+icons = false 
+clickable = false 
+format_mem = "{mem_used}/{mem_total}"
+[block.theme_overrides]
+idle_fg = "#3C3C3C"
+idle_bg = "#B3D9D9"
 
 [[block]]
 block = "cpu"
+format = "{utilization} {frequency}"
 interval = 1
-
-[[block]]
-block = "load"
-interval = 1
-format = "{1m}"
+[block.theme_overrides]
+idle_bg = "#B3D9D9"
+idle_fg = "#3C3C3C"
 
 [[block]]
 block = "sound"
@@ -38,14 +48,19 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d/%m %R"
+format = " %Y/%d/%m %a %R"
+[block.theme_overrides]
+idle_bg = "#4F9D9D"
+idle_fg = "#3C3C3C"
 
+[[block]]
+block = "backlight"
+device = "intel_backlight"
 
 [[block]]
 block = "battery"
 interval = 10
 format = "{percentage}"
-
 
 [[block]]
 block = "custom"

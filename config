@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font for window titles
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono, FontAwesome 10
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -182,7 +182,7 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+p exec shutter
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 100 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show drun 
 bindsym XF86MonBrightnessUp exec light -A 5     # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5   # decrease screen brightness
 #
@@ -195,6 +195,8 @@ exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
 # sudo apt-get install i3 thunar font-awesome 
 # sudo apt-get install gnome-icon-theme-full
 # sudo apt-get install lxappearance
+# sudo add-apt-repository ppa:jasonpleau/rofi
+# sudo apt-get update
 # sudo apt-get install rofi compton scrot
 # git clone https://github.com/meskarune/i3lock-fancy.git
 # git clone https://github.com/greshake/i3status-rust
@@ -208,4 +210,7 @@ exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
 # sudo apt-get install rofi
 # git clone --depth=1 https://github.com/adi1090x/rofi.git
 # ./setup.sh
-# 
+#
+# sudo add-apt-repository ppa:varlesh-l/papirus-pack
+# sudo apt install papirus-icon-theme
+# rofi-theme-selector

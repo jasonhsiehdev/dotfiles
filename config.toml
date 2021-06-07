@@ -4,6 +4,12 @@ icons = "awesome"
 
 [[block]]
 block = "custom"
+on_click = '''thunar /media/$USER/(ls /media/$USER)''' 
+command = '''ls /media/$USER | awk '{printf "  "$0}''''
+interval = 10
+
+[[block]]
+block = "custom"
 command = "whoami"
 interval = "once"
 
@@ -17,13 +23,6 @@ interval = 20
 warning = 20.0
 alert = 10.0
 format = "{icon} {available}"
-
-[[block]]
-block = "custom"
-on_click = '''thunar /media/$USER/(ls /media/$USER)''' 
-command = '''ls /media/$USER | awk '{printf "  "$0}''''
-interval = 2
-
 
 [[block]]
 block = "memory"
@@ -46,11 +45,19 @@ idle_fg = "#3C3C3C"
 block = "sound"
 
 [[block]]
+block = "custom"
+command = '~/.config/i3/i3status-rust/examples/scripts/mic.sh' 
+interval = 10
+[block.theme_overrides]
+idle_bg = "#FFF4C1"
+idle_fg = "#3C3C3C"
+
+[[block]]
 block = "time"
 interval = 60
 format = " %Y/%d/%m %a %R"
 [block.theme_overrides]
-idle_bg = "#4F9D9D"
+idle_bg = "#BEBEBE"
 idle_fg = "#3C3C3C"
 
 [[block]]
@@ -65,5 +72,5 @@ format = "{percentage} {time}"
 [[block]]
 block = "custom"
 command = "nmcli -t con show gitlab | grep -io 'VPN connected'"
-interval = 5
+interval = 10
 

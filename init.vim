@@ -186,7 +186,10 @@ nnoremap L gt
 " 'm + shift j' mark
 " '`' + shift j ' jump to mark j
 " '`' + shift k ' jump to mark k
-"
+" 
+" Insert string at head in multiple line
+" 'ctrl+v' open visual block
+" 'shift+i' insert mode and add your string and press esc, done
 "
 " Tmux 
 " 'C-b' is command leader

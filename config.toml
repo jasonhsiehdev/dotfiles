@@ -6,7 +6,7 @@ icons = "awesome"
 block = "custom"
 on_click = '''thunar /media/$USER/(ls /media/$USER)''' 
 command = '''ls /media/$USER | awk '{printf "  "$0}''''
-interval = 10
+interval = 1
 
 [[block]]
 block = "custom"

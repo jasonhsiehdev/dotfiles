@@ -116,13 +116,20 @@ nnoremap <Leader>r
     \ :let @s=''.expand('<cword>').''<cr>
     \ :%s/<C-r>s/<>/gc
 
-" For multi-line tab
+" For multi-line tabl
 vmap <Tab> >
 vmap <S-Tab> <
 
 " For shift j or shift k to yank something j or k
 vnoremap J :m '>+1<CR>gv=gv 
 vnoremap K :m '<-2<CR>gv=gv 
+
+" For tab
+nnoremap H gT
+nnoremap L gt
+
+
+
 
 " Install neovim dependency library 
 	" brew install pkg-config starship cmake luarocks ctags
@@ -177,8 +184,8 @@ vnoremap K :m '<-2<CR>gv=gv
 " vi (  yank between (
 " 'm + shift k' mark
 " 'm + shift j' mark
-" ' ' + shift j ' jump to mark j
-" ' ' + shift k ' jump to mark k
+" '`' + shift j ' jump to mark j
+" '`' + shift k ' jump to mark k
 "
 "
 " Tmux 

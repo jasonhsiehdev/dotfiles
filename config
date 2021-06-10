@@ -27,10 +27,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -51,10 +51,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+s split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -75,7 +75,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 Firefox  "
+set $ws1 "1 Browser  "
 set $ws2 "2 Ternimals  "
 set $ws3 "3"
 set $ws4 "4"
@@ -143,7 +143,7 @@ bindsym $mod+r mode "resize"
 
 # User setting -------------------------------------------------------------------------------------------------------- 
 for_window [class="Thunar"] move to workspace $ws10  
-for_window [class="Firefox"] move to workspace $ws1  
+for_window [class="qutebrowser"] move to workspace $ws1  
 for_window [class="Spotify"] move to workspace $ws9 
 
 # window colors variables
@@ -178,7 +178,7 @@ bar {
 hide_edge_borders both
 
 # User key binding ----------------------------------------------------------------------------------------------------
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec qutebrowser
 bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+p exec shutter
@@ -187,10 +187,10 @@ bindsym XF86MonBrightnessUp exec light -A 5     # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5   # decrease screen brightness
 #
 # Start up setting 
-exec --no-startup-id showkey 
+# exec --no-startup-id showkey 
 exec --no-startup-id fcitx
 exec --no-startup-id compton
-exec --no-startup-id spotify
+# exec --no-startup-id spotify
 exec --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
 # Installation
 # sudo apt-get install i3 thunar font-awesome 

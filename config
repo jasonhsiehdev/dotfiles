@@ -2,7 +2,7 @@
 set $mod Mod1
 
 # Font for window titles
-font pango:DejaVu Sans Mono, FontAwesome 8
+font pango:DejaVu Sans Mono, FontAwesome 6
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -162,7 +162,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar (using i3status-rust)
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 8
+    font pango:DejaVu Sans Mono, FontAwesome 6
     status_command i3status  
     colors {
         separator #666666

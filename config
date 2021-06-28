@@ -162,8 +162,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar (using i3status-rust)
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 6
-    #status_command ~/.cargo/bin/i3status-rs ~/.config/i3/i3status-rust/config.toml
+    font pango:DejaVu Sans Mono, FontAwesome 8
+    status_command i3status  
     colors {
         separator #666666
         background #222222
@@ -175,7 +175,11 @@ bar {
     }   
 }
 
-hide_edge_borders both
+# Below is i3-gaps
+smart_gaps on
+smart_borders on
+
+# hide_edge_borders both
 
 # User key binding ----------------------------------------------------------------------------------------------------
 bindsym $mod+Shift+f exec firefox
@@ -189,9 +193,10 @@ bindsym XF86MonBrightnessDown exec light -U 5   # decrease screen brightness
 # Start up setting 
 # exec --no-startup-id showkey 
 exec --no-startup-id fcitx
-exec --no-startup-id compton
 # exec --no-startup-id spotify
+exec --no-startup-id xrandr -s 1920x1200
 exec --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
+exec --no-startup-id compton
 # Installation
 # sudo apt-get install i3 thunar font-awesome 
 # sudo apt-get install gnome-icon-theme-full

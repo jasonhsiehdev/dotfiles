@@ -128,6 +128,12 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap H gT
 nnoremap L gt
 
+" For mark between j,k "
+nnoremap <silent> <leader>j `J
+nnoremap <silent> <leader>J mJ
+nnoremap <silent> <leader>k `K
+nnoremap <silent> <leader>K mK
+
 
 
 

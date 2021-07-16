@@ -24,7 +24,8 @@ set clipboard+=unnamedplus      " sets the clipboard so you can paste stuff from
 set complete+=kspell            " auto complete with spellcheck
 set completeopt=menuone,longest " auto complete menu (It's pretty great)
 set splitbelow                  " set split terminal at the bottom
-set nohlsearch                    " set highlight search
+set nohlsearch                  " set highlight search
+set foldlevel=99                 " set code fold level
 
 call plug#begin('~/.config/nvim/plugged')   " For plugin start
 
@@ -49,7 +50,8 @@ Plug 'BurntSushi/ripgrep'                       " sudo add-apt-repository ppa:x4
 Plug 'jremmen/vim-ripgrep'                      " For vim ripgrep
 Plug 'mhinz/vim-grepper'                        " For grep 
 Plug 'lambdalisue/fern.vim'                     " For vim split pretty
-
+Plug 'pseewald/vim-anyfold'                     " For code folding
+Plug 'lfv89/vim-interestingwords'               " For highlight under the cursor
 call plug#end()                             " For plugin end
 
 if !exists('g:gruvbox_contrast_light')
@@ -72,13 +74,14 @@ endif
 
 if executable('rg')
     let g:rg_derive_root='true'
-endif
+endif   
 
 let g:airline#extensions#whitespace#enabled = 0
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'  " For YCM configuration
 let g:ycm_confirm_extra_conf = 0                        " For YCM configuration
 let g:NERDSpaceDelims = 1                               " For comment space dilims
 let mapleader = " "                                     " My leader character
+let g:anyfold_fold_comments=0                           
 
 " For user shortcut by chenghung
 nnoremap <silent> <leader>u :UndotreeShow<cr>
@@ -87,7 +90,11 @@ nnoremap <silent> <leader>a ^
 nnoremap <silent> <leader>e <end>
 vnoremap <silent> <leader>a ^
 vnoremap <silent> <leader>e <end>
+nnoremap <silent> <leader>zz :set foldlevel=0<cr>
+nnoremap <silent> <leader>za :set foldlevel=99<cr>
 
+filetype plugin indent on                               " required
+autocmd Filetype * AnyFoldActivate                      " activate for all filetypes
 " For telescope files finder shortcut
 nnoremap <silent> <leader>ff <cmd>Telescope find_files<cr> 
 nnoremap <silent> <leader>fg <cmd>Telescope live_grep<cr>
@@ -196,6 +203,15 @@ nnoremap <silent> <leader>K mK
 " Insert string at head in multiple line
 " 'ctrl+v' open visual block
 " 'shift+i' insert mode and add your string and press esc, done
+
+" Code folding 
+" :h fold-commands
+" c-za: open/close folding 
+" c-zO  open/close folding recursive
+" [[ ]] jump to next open/close folding
+"
+
+
 "
 " Tmux 
 " 'C-b' is command leader

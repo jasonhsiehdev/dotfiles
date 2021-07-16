@@ -143,7 +143,7 @@ bindsym $mod+r mode "resize"
 
 # User setting -------------------------------------------------------------------------------------------------------- 
 for_window [class="Thunar"] move to workspace $ws10  
-for_window [class="qutebrowser"] move to workspace $ws1  
+for_window [class="Firefox"] move to workspace $ws1  
 for_window [class="Spotify"] move to workspace $ws9 
 
 # window colors variables
@@ -178,7 +178,7 @@ bar {
 hide_edge_borders both
 
 # User key binding ----------------------------------------------------------------------------------------------------
-bindsym $mod+Shift+f exec qutebrowser
+bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+p exec shutter

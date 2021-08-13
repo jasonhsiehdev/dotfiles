@@ -8,7 +8,6 @@ font pango:DejaVu Sans Mono, FontAwesome 10
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -143,7 +142,7 @@ bindsym $mod+r mode "resize"
 
 # User setting -------------------------------------------------------------------------------------------------------- 
 for_window [class="Thunar"] move to workspace $ws10  
-for_window [class="Firefox"] move to workspace $ws1  
+for_window [class="Google-chrome"] move to workspace $ws1  
 for_window [class="Spotify"] move to workspace $ws9 
 
 # window colors variables
@@ -178,7 +177,7 @@ bar {
 hide_edge_borders both
 
 # User key binding ----------------------------------------------------------------------------------------------------
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec google-chrome
 bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+p exec shutter

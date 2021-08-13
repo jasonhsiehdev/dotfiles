@@ -44,6 +44,12 @@ set os_type (uname -s)
 
 if [ "$os_type" = "Linux" ]
 
+function audio_reflesh
+    pulseaudio --k
+    pulseaudio --start 
+    i3 restart > /dev/null 
+end
+
 # Custom function for line counting
 function line-count
     wc -l | string trim

@@ -25,7 +25,11 @@ set complete+=kspell            " auto complete with spellcheck
 set completeopt=menuone,longest " auto complete menu (It's pretty great)
 set splitbelow                  " set split terminal at the bottom
 set nohlsearch                  " set highlight search
-set foldlevel=99                 " set code fold level
+set foldlevel=99                " set code fold level
+
+set wildmode=longest,list,full  " Nice menu when typing `:find *.py`
+set wildmenu                    " Ignore files
+set wildignore+=**/.git/*
 
 call plug#begin('~/.config/nvim/plugged')   " For plugin start
 
@@ -141,7 +145,32 @@ nnoremap <silent> <leader>J mJ
 nnoremap <silent> <leader>k `K
 nnoremap <silent> <leader>K mK
 
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 
+vnoremap <up> <nop>
+vnoremap <down> <nop>
+vnoremap <left> <nop>
+vnoremap <right> <nop>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+noremap <C-w>+ :resize +10<CR>
+noremap <C-w>- :resize -10<CR>
+noremap <C-w>< :vertical:resize -10<CR>
+noremap <C-w>> :vertical:resize +10<CR>
+
+noremap Y y$
+
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
 
 
 " Install neovim dependency library 

@@ -119,3 +119,11 @@ sudo cp _gi_cairo.cpython-35m-x86_64-linux-gnu.so _gi_cairo.cpython-36m-x86_64-l
 nvim .
 PlugInstall
 ```
+
+### Install font
+0. sudo apt-get install fonts-powerline
+1. Download font awesome at https://github.com/FortAwesome/Font-Awesome/releases/tag/5.15.4
+2. Double click the otf file
+3. Click install
+4. Done
+5. Download 

@@ -1,6 +1,5 @@
-
-theme = "plain"
-icons = "none"
+theme = "native"
+icons = "awesome"
 
 
 [[block]]

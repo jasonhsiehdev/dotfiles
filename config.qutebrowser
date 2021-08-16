@@ -1,5 +1,0 @@
-# Install fcitx for qt5
-# sudo apt-get install fcitx-libs-qt5
-# sudo apt-get install fcitx-frontend-qt5
-# cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/*.so to /usr/local/lib/python3.6/dist-packages/PyQt5/Qt5/plugins/platforminputcontexts
-# Install dracula for qutebrowser theme

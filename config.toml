@@ -1,12 +1,7 @@
 
-theme = "nord-dark"
-icons = "awesome"
+theme = "plain"
+icons = "none"
 
-[[block]]
-block = "custom"
-on_click = '''thunar /media/$USER/(ls /media/$USER)''' 
-command = '''ls /media/$USER | awk '{printf "  "$0}''''
-interval = 1
 
 [[block]]
 block = "custom"

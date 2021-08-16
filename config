@@ -114,7 +114,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -178,7 +178,7 @@ hide_edge_borders both
 
 # User key binding ----------------------------------------------------------------------------------------------------
 bindsym $mod+Shift+f exec google-chrome
-bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
+# bindsym $mod+Shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 bindsym $mod+Shift+t exec thunar
 bindsym $mod+Shift+p exec shutter
 bindsym $mod+d exec rofi -show drun 
@@ -186,31 +186,8 @@ bindsym XF86MonBrightnessUp exec light -A 5     # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5   # decrease screen brightness
 #
 # Start up setting 
-# exec --no-startup-id showkey 
 exec --no-startup-id fcitx
 exec --no-startup-id compton
-# exec --no-startup-id spotify
 exec --no-startup-id feh --bg-scale ~/dotfiles/wallpaper.jpg
-# Installation
-# sudo apt-get install i3 thunar font-awesome 
-# sudo apt-get install gnome-icon-theme-full
-# sudo apt-get install lxappearance
-# sudo add-apt-repository ppa:jasonpleau/rofi
-# sudo apt-get update
-# sudo apt-get install rofi compton scrot
-# git clone https://github.com/meskarune/i3lock-fancy.git
-# git clone https://github.com/greshake/i3status-rust
-# cd i3status-rust
-# cargo install --path .
-# ./install.sh
-# cp dotfiles/config.toml to i3status-rust/
-# git clone https://github.com/haikarainen/light.git
-# ./autogen.sh && ./configure.sh && make && sudo make install
-#
-# sudo apt-get install rofi
-# git clone --depth=1 https://github.com/adi1090x/rofi.git
-# ./setup.sh
-#
-# sudo add-apt-repository ppa:varlesh-l/papirus-pack
-# sudo apt install papirus-icon-theme
-# rofi-theme-selector
+exec --no-startup-id fcitx-autostart
+

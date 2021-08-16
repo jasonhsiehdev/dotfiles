@@ -102,41 +102,41 @@ end
 # Modify from fishbone greeting
 
 function fish_greeting -d "Greeting message on shell session start up"
-    set --local os_type (uname -s)
+    # set --local os_type (uname -s)
 
-    set_color $fish_color_autosuggestion
-    echo ""
-    set_color D1E9E9
-    printf (show_user_info)
-    set_color C4E1E1
-    printf (show_shell_info)
-    set_color B3D9D9
-    printf (show_os_info)
-    set_color A3D1D1
-    if [ "$os_type" = "Linux" ]
-        printf (show_net_info)
-    end 
-    set_color 95CACA
-    printf (show_cpu_info)
-    set_color 81C0C0
+    # set_color $fish_color_autosuggestion
+    # echo ""
+    # set_color D1E9E9
+    # printf (show_user_info)
+    # set_color C4E1E1
+    # printf (show_shell_info)
+    # set_color B3D9D9
+    # printf (show_os_info)
+    # set_color A3D1D1
+    # if [ "$os_type" = "Linux" ]
+        # printf (show_net_info)
+    # end 
+    # set_color 95CACA
+    # printf (show_cpu_info)
+    # set_color 81C0C0
 
-    if [ "$os_type" = "Linux" ]
-        printf (show_cpu_usage)
-    end
-    set_color 6FB7B7
-    printf (show_ssd_info)
-    set_color 5CADAD
+    # if [ "$os_type" = "Linux" ]
+        # printf (show_cpu_usage)
+    # end
+    # set_color 6FB7B7
+    # printf (show_ssd_info)
+    # set_color 5CADAD
     
-    if [ "$os_type" = "Linux" ]
-        printf (show_mem_info)
-    end 
-    set_color 4F9D9D
+    # if [ "$os_type" = "Linux" ]
+        # printf (show_mem_info)
+    # end 
+    # set_color 4F9D9D
     
-    if [ "$os_type" = "Linux" ]
-        printf (show_media_info)
-    end
-    echo ""
-    set_color normal
+    # if [ "$os_type" = "Linux" ]
+        # printf (show_media_info)
+    # end
+    # echo ""
+    # set_color normal
 end
 
 function show_user_info -d "Prints user info"

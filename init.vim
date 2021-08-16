@@ -51,7 +51,7 @@ Plug 'tpope/vim-fugitive'                       " For git
 Plug 'plasticboy/vim-markdown'                  " For markdown syntax
 Plug 'ThePrimeagen/vim-be-good'                 " For practice vim 
 Plug 'BurntSushi/ripgrep'                       " sudo add-apt-repository ppa:x4121/ripgrep
-Plug 'jremmen/vim-ripgrep'                      " For vim ripgrep
+"Plug 'jremmen/vim-ripgrep'                      " For vim ripgrep
 Plug 'mhinz/vim-grepper'                        " For grep 
 Plug 'lambdalisue/fern.vim'                     " For vim split pretty
 Plug 'pseewald/vim-anyfold'                     " For code folding

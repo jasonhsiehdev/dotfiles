@@ -1,6 +1,7 @@
 ## Installation Guide
 - System - Linux
-- Version - Ubuntu 16.04, i3 windows tiling
+- Window - i3
+- Version - Ubuntu 16.04
 ### Update and upgrade
 ```shell=
 sudo apt-get update && sudo apt-get upgrade 
@@ -10,13 +11,14 @@ sudo add-apt-repository -y ppa:jasonpleau/rofi
 sudo add-apt-repository -y ppa:papirus/papirus
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo add-apt-repository -y ppa:deadsnakes/ppa
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository -y ppa:x4121/ripgrep
 sudo apt-get update
 ```
 
 ### Clone the dotfiles
 ```shell=
-sudo apt-get install git tmux
+sudo apt-get install git tmux xclip ripgrep
 git clone https://github.com/jasonhsiehdev/dotfiles
 ```
 
@@ -35,7 +37,7 @@ omf install bass tab z
 ```shell=
 sudo apt-get install libncurses5-dev libncursesw5-dev libx11-dev libperl-dev ctags exuberant-ctags 
 sudo apt-get install cscope wget git make curl chrpath gawk corkscrew texinfo libsdl1.2-dev libsdl1.2-dev 
-sudo apt-get install diffstat ninja-build libc6 libncurses5 libstdc++6 libz1 cpio
+sudo apt-get install diffstat ninja-build libc6 libncurses5 libstdc++6 libz1 cpio lib32ncurses5 lib32tinfo5 libc6-i386
 ```
 
 ### Install package for i3wm
@@ -57,7 +59,7 @@ cargo install --path .
 ./install.sh
 ### Another package
 git clone https://github.com/haikarainen/light.git
-sudo apt-get install autoconf automake 
+sudo apt-get install autoconf automake
 ./autogen.sh 
 ./configure
 make -j4 
@@ -68,8 +70,8 @@ sudo make install
 ```shell=
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 ./setup.sh
-sudo apt-get install papirus-icon-theme
-rofi-theme-selecto
+sudo apt-get install papirus-icon-theme rofi
+rofi-theme-selector
 ```
 
 ### Install neovim
@@ -80,7 +82,7 @@ sudo apt-get install neovim
 ## Install cmake 3.18
 ```shell=
 wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz
-tar -xzvf cmake-3.18.4-Linux-x86_64.tar.gz \ 
+tar -xzvf cmake-3.18.4-Linux-x86_64.tar.gz
 sudo cp cmake-3.18.4-Linux-x86_64/bin/*  /usr/bin/
 sudo mkdir /usr/share/cmake-3.18
 cp -rf cmake-3.18.4-Linux-x86_64/share/cmake-3.18 /usr/share/cmake-3.18/
@@ -93,8 +95,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ### Install gcc-8, g++-8 and python3.6 for YCM
 ```shell=
 sudo apt-get install python3.6 python3.6-dev python3-pip gcc-8 g++-8 python3.6-gdbm
-pip3 install neovim 
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 0 
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 0
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 0 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 1 
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 1 
@@ -103,6 +105,8 @@ sudo update-alternatives --set g++ /usr/bin/g++-8
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 0
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
 sudo update-alternatives --set python3 /usr/bin/python3.6
+
+pip3 install neovim 
 
 cd /usr/lib/python3/dist-packages/
 sudo cp apt_pkg.cpython-35m-x86_64-linux-gnu.so apt_pkg.cpython-36m-x86_64-linux-gnu.so
@@ -124,6 +128,10 @@ PlugInstall
 5. Download 
 ```
 
+### Install chewing
+```shell=
+sudo apt-get install fcitx fcitx-chewing
+```
 
 ### Create hard link for configuration files.
 ```shell=
@@ -134,8 +142,21 @@ ln config.fish ~/.config/fish/config.fish -f
 ln config.toml ~/.local/share/i3status-rust/config.toml -f
 ```
 
-### Install chewing
+### Install Ventoy exFAT
 ```shell=
-sudo apt-get install fcitx fcitx-chewing
+sudo apt-get install exfat-utils exfat-fuse
 ```
 
+
+### Install exa 
+```shell=
+wget -c 'the latest exa release binary'
+unzip the zip file
+sudo mv bin to /usr/bin
+```
+
+
+### Add group to usergroup
+```shell=
+sudo usermod -a -G groupName userName
+```

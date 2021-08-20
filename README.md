@@ -81,11 +81,9 @@ sudo apt-get install neovim
 
 ## Install cmake 3.18
 ```shell=
-wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz
-tar -xzvf cmake-3.18.4-Linux-x86_64.tar.gz
-sudo cp cmake-3.18.4-Linux-x86_64/bin/*  /usr/bin/
-sudo mkdir /usr/share/cmake-3.18
-cp -rf cmake-3.18.4-Linux-x86_64/share/cmake-3.18 /usr/share/cmake-3.18/
+sudo apt remove --purge --auto-remove cmake
+sudo apt-add-repository "deb https://apt.kitware.com/ubuntu/ xenial main"
+sudo apt install cmake
 sudo apt-get install neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

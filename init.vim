@@ -31,8 +31,7 @@ set wildmode=longest,list,full  " Nice menu when typing `:find *.py`
 set wildmenu                    " Ignore files
 set wildignore+=**/.git/*
 
-call plug#begin('~/.config/nvim/plugged')   " For plugin start
-
+call plug#begin('~/.config/nvim/plugged')       " For plugin start
 Plug 'vim-airline/vim-airline'                  " For vim airline 
 Plug 'vim-airline/vim-airline-themes'           " For vim airline theme 
 Plug 'nvim-lua/popup.nvim'                      " For files finder 
@@ -51,12 +50,13 @@ Plug 'tpope/vim-fugitive'                       " For git
 Plug 'plasticboy/vim-markdown'                  " For markdown syntax
 Plug 'ThePrimeagen/vim-be-good'                 " For practice vim 
 Plug 'BurntSushi/ripgrep'                       " sudo add-apt-repository ppa:x4121/ripgrep
-"Plug 'jremmen/vim-ripgrep'                      " For vim ripgrep
+Plug 'jremmen/vim-ripgrep'                      " For vim ripgrep
+" Use it https://github.com/miki725/vim-ripgrep 
 Plug 'mhinz/vim-grepper'                        " For grep 
 Plug 'lambdalisue/fern.vim'                     " For vim split pretty
 Plug 'pseewald/vim-anyfold'                     " For code folding
 Plug 'lfv89/vim-interestingwords'               " For highlight under the cursor
-call plug#end()                             " For plugin end
+call plug#end()                                 " For plugin end
 
 if !exists('g:gruvbox_contrast_light')
   let g:gruvbox_contrast_light='hard'
@@ -172,24 +172,6 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
-
-" Install neovim dependency library 
-	" brew install pkg-config starship cmake luarocks ctags
-" vim ~/.config/fish/config.fish at the end of file 
-	" starship init fish | source
-" Install vim plug for neovim
-	" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-	"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-" Create synbolic link between .vimrc and ~/.config/nvim/init.vim
-	" cp ~/.vimrc ~/.config/nvim/init.vim
-	" ln -s ~/.vimrc ~/.config/nvim/init.vim
-
-" Install latest neovim
-	" brew install --HEAD neovim
-" .gitignore locally 
-    " git update-index --assume-unchanged .gitignore
-
 " Vim keyboard shortcut
 " 'tx' is before 'x' character
 " 'fx' is at 'x' character
@@ -238,9 +220,6 @@ inoremap ? ?<c-g>u
 " c-za: open/close folding 
 " c-zO  open/close folding recursive
 " [[ ]] jump to next open/close folding
-"
-
-
 "
 " Tmux 
 " 'C-b' is command leader

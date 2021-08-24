@@ -42,9 +42,38 @@ sudo apt-get install diffstat ninja-build libc6 libncurses5 libstdc++6 libz1 cpi
 
 ### Install package for i3wm
 ```shell=
-sudo apt-get install i3 thunar fonts-font-awesome gnome-icon-theme feh
+sudo apt-get install thunar fonts-font-awesome gnome-icon-theme feh
 sudo apt-get install lxappearance compton scrot cargo
 ```
+
+### Install xcb for i3-gaps
+```shell=
+git clone https://github.com/Airblader/xcb-util-xrm
+cd xcb-util-xrm
+git submodule update --init
+./autogen.sh --prefix=/usr
+make
+sudo make install
+```
+
+### Install i3-gaps 
+```shell=
+git clone https://github.com/resloved/i3
+autoreconf --force --install
+mkdir build
+cd build
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+```
+
+### Install i3lock-fancy
+```shell=
+git clone https://github.com/meskarune/i3lock-fancy.git
+cd i3lock-fancy
+sudo make install
+```
+
 
 ### Install package for i3status-rust
 ```shell=
@@ -111,6 +140,11 @@ sudo cp apt_pkg.cpython-35m-x86_64-linux-gnu.so apt_pkg.cpython-36m-x86_64-linux
 cd /usr/lib/python3/dist-packages/gi/
 sudo cp _gi.cpython-35m-x86_64-linux-gnu.so _gi.cpython-36m-x86_64-linux-gnu.so
 sudo cp _gi_cairo.cpython-35m-x86_64-linux-gnu.so _gi_cairo.cpython-36m-x86_64-linux-gnu.so
+
+sudo cp _dbus_bindings.cpython-35m-x86_64-linux-gnu.so _dbus_bindings.cpython-36m-x86_64-linux-gnu.so
+sudo cp _dbus_glib_bindings.cpython-35m-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-36m-x86_64-linux-gnu.so
+
+
 
 nvim .
 PlugInstall

@@ -144,8 +144,6 @@ sudo cp _gi_cairo.cpython-35m-x86_64-linux-gnu.so _gi_cairo.cpython-36m-x86_64-l
 sudo cp _dbus_bindings.cpython-35m-x86_64-linux-gnu.so _dbus_bindings.cpython-36m-x86_64-linux-gnu.so
 sudo cp _dbus_glib_bindings.cpython-35m-x86_64-linux-gnu.so _dbus_glib_bindings.cpython-36m-x86_64-linux-gnu.so
 
-
-
 nvim .
 PlugInstall
 ```
@@ -179,7 +177,6 @@ ln config.toml ~/.local/share/i3status-rust/config.toml -f
 sudo apt-get install exfat-utils exfat-fuse
 ```
 
-
 ### Install exa 
 ```shell=
 wget -c 'the latest exa release binary'
@@ -187,8 +184,31 @@ unzip the zip file
 sudo mv bin to /usr/bin
 ```
 
-
 ### Add group to usergroup
 ```shell=
 sudo usermod -a -G groupName userName
+```
+
+### Install palette for terminal
+```shell=
+sudo apt-get install dconf-cli uuid-runtime
+git clone https://github.com/Mayccoll/Gogh.git gogh
+git clone https://github.com/Mayccoll/Gogh.git gogh
+# Install theme
+./Arthur.sh
+```
+### Usage of git
+```shell=
+# Ignore .gitignore file
+git update-index --assume-unchanged .gitignore
+```
+
+### Usage of i3-gaps
+```shell=
+# Use xprop to find the application's class
+xprop
+# Use pactl to manage the voice/sound device
+pactrl
+# Use lxappearance to select the ui theme
+lxappearance 
 ```

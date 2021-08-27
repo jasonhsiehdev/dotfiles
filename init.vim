@@ -56,6 +56,8 @@ Plug 'mhinz/vim-grepper'                        " For grep
 Plug 'lambdalisue/fern.vim'                     " For vim split pretty
 Plug 'pseewald/vim-anyfold'                     " For code folding
 Plug 'lfv89/vim-interestingwords'               " For highlight under the cursor
+Plug 'davidhalter/jedi-vim'                     " For python autocomplete
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()                                 " For plugin end
 
 if !exists('g:gruvbox_contrast_light')
@@ -110,6 +112,8 @@ nnoremap <silent> <leader>gd :cs find g <C-r>=expand("<cword>")<cr><cr>
 nnoremap <silent> <leader>gi :cs find i <C-r>=expand("<cword>")<cr><cr>
 nnoremap <silent> <leader>gu :cs find c <C-r>=expand("<cword>")<cr><cr> 
 nnoremap <silent> <leader>gf :cs find f <C-r>=expand("<cword>")<cr><cr>
+
+nnoremap <silent> <leader>mp :MarkdownPreview<cr>
 
 " For code navigation back shortcut
 nnoremap <silent> <C-c> <C-t>               

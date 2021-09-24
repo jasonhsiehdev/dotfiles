@@ -38,8 +38,8 @@ abbr --add unset_fish 'set --erase <variable>'
 abbr --add swap 'rm ~/.local/share/nvim/swap/*.swp'
 abbr --add code_find 'find ./  -name "*.c" -o -name "*.h" -o -name "*.cpp" > cscope.files'
 abbr --add code_cscope 'cscope -Rbq -i cscope.files'
-abbr --add xrandr_on 'xrandr --output <DP-1/DP-2> --right-of eDP-1 --auto'
-abbr --add xrandr_off 'xrandr --output <DP-1/DP-2> --off'
+abbr --add xrandr_on 'xrandr --output DP-1--right-of eDP-1 --auto'
+abbr --add xrandr_off 'xrandr --output DP-1--off'
 
 set os_type (uname -s)
 

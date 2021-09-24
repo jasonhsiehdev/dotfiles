@@ -142,7 +142,7 @@ bindsym $mod+r mode "resize"
 
 
 # User setting -------------------------------------------------------------------------------------------------------- 
-for_window [class=".*"] border pixel 0
+# for_window [class=".*"] border pixel 0
 for_window [class="Thunar"] move to workspace $ws10  
 for_window [class="Google-chrome"] move to workspace $ws1  
 for_window [class="Spotify"] move to workspace $ws9 

@@ -212,3 +212,8 @@ pactrl
 # Use lxappearance to select the ui theme
 lxappearance 
 ```
+
+### Install exFAT
+```shell=
+sudo apt-get install exfat-utils exfat-fuse
+```
